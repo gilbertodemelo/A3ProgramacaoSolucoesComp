@@ -4,18 +4,18 @@
  */
 package a3programacaosolucoescomp;
 
-public class Promoter implements Usuario {
+
+public class Participante implements Usuario {
     
-    // Variáveis de instância
+     // Variáveis de instância
     private String primeiroNome;
     private String sobreNome;
     private String email;
     private String numeroTelefone;
     private String rg;
     private String cpf;
-    private String empresa;
-    private String cnpjEmpresa;
-  
+    private String nomeUsuarioIg;       // nome de usuario de Instagram 
+    
     /**
      * Constructor
      * @param primeiroNome
@@ -24,21 +24,17 @@ public class Promoter implements Usuario {
      * @param numTel
      * @param rg
      * @param cpf
-     * @param empresa
-     * @param cnpj
-     * 
+     * @param instagram
      */
-    public Promoter(String primeiroNome, String sobreNome, String email, 
-            String numTel, String rg, String cpf, String empresa, String cnpj) {
+    public Participante(String primeiroNome, String sobreNome, String email, 
+            String numTel, String rg, String cpf, String instagram) {
        this.primeiroNome = primeiroNome;
        this.sobreNome = sobreNome;
        this.email = email;
        this.numeroTelefone = numTel;
        this.rg = rg;
        this.cpf = cpf;
-       this.empresa = empresa;
-       this.cnpjEmpresa = cnpj;
-               
+       this.nomeUsuarioIg = instagram;          
     }
     
     // Métodos Mutadores
@@ -54,8 +50,7 @@ public class Promoter implements Usuario {
     public void setRg(String rg) { this.rg = rg;}
     @Override
     public void setCpf(String cpf) { this.cpf = cpf; }
-    public void setEmpresa(String empresa) { this.empresa = empresa; }
-    public void setCnpjEmpresa(String cnpj) { this.cnpjEmpresa = cnpj; }
+    public void setInstagram(String instagram) { this.nomeUsuarioIg = instagram; }
     
     // Métodos Acessores 
     @Override
@@ -70,8 +65,7 @@ public class Promoter implements Usuario {
     public String getRg() { return this.rg; }
     @Override
     public String getCpf() { return this.cpf; }
-    public String getEmpresa() { return this.empresa; }
-    public String getCnpjEmpresa() { return this.cnpjEmpresa; }
-
-   
+    public String getInstagram() { return this.nomeUsuarioIg; }
+ 
+    
 }
