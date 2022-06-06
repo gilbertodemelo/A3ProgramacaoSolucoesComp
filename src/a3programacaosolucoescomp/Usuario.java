@@ -6,12 +6,11 @@ package a3programacaosolucoescomp;
 
 public interface Usuario {
     
-    public String setPrimeiroNome();
-    public String setSobrenome();
-    public String setEmail();
-    public String setLogradouro();
-    public String setTelefone();
-    public String setRg();
-    public String setCpf();
+    public void setPrimeiroNome();
+    public void setSobrenome();
+    public void setEmail();
+    public void setTelefone();
+    public void setRg();
+    public void setCpf();
   
 }
