@@ -4,6 +4,10 @@
  */
 package a3programacaosolucoescomp;
 
+import java.util.ArrayList;
+import java.util.Date;
+
+
 public class Promoter implements Usuario {
     
     // Variáveis de instância
@@ -15,6 +19,7 @@ public class Promoter implements Usuario {
     private String cpf;
     private String empresa;
     private String cnpjEmpresa;
+    private ArrayList<Evento> eventos; // ArrayList contendo lista de eventos do promoter
   
     /**
      * Constructor
@@ -26,7 +31,7 @@ public class Promoter implements Usuario {
      * @param cpf
      * @param empresa
      * @param cnpj
-     * 
+     * O Constructor instancia o objeto com uma ArrayList de Eventos fazia
      */
     public Promoter(String primeiroNome, String sobreNome, String email, 
             String numTel, String rg, String cpf, String empresa, String cnpj) {
@@ -38,7 +43,8 @@ public class Promoter implements Usuario {
        this.cpf = cpf;
        this.empresa = empresa;
        this.cnpjEmpresa = cnpj;
-               
+       this.eventos = new ArrayList<>();
+              
     }
     
     // Métodos Mutadores
@@ -56,6 +62,7 @@ public class Promoter implements Usuario {
     public void setCpf(String cpf) { this.cpf = cpf; }
     public void setEmpresa(String empresa) { this.empresa = empresa; }
     public void setCnpjEmpresa(String cnpj) { this.cnpjEmpresa = cnpj; }
+  
     
     // Métodos Acessores 
     @Override
@@ -72,6 +79,26 @@ public class Promoter implements Usuario {
     public String getCpf() { return this.cpf; }
     public String getEmpresa() { return this.empresa; }
     public String getCnpjEmpresa() { return this.cnpjEmpresa; }
+    
+      /**
+     * criaEvento - cria um objeto Evento e salva na
+     * ArrayList de eventos do objeto Promoter
+     * @param nomeEvento
+     * @param data
+     * @param local
+     * @param promoter 
+     */
+    public void criaEvento(String nomeEvento, Date data, String local, Promoter promoter) {
+        eventos.add(new Evento(nomeEvento, data, local, promoter));
+    }
+    
+    public void procuraEventos() {
+        if (this.eventos.isEmpty()) {
+            System.out.println("Não há eventos agendados.");
+        } else {
+            eventos.forEach((item) -> System.out.println(item.toString()));
+        }
+    }
 
    
 }
