@@ -92,6 +92,9 @@ public class Promoter implements Usuario {
         eventos.add(new Evento(nomeEvento, data, local, promoter));
     }
     
+    /**
+     * procuraEventos - mostra os eventos de um Promoter
+     */
     public void procuraEventos() {
         if (this.eventos.isEmpty()) {
             System.out.println("Não há eventos agendados.");

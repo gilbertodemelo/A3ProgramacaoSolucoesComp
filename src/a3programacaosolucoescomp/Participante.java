@@ -4,6 +4,8 @@
  */
 package a3programacaosolucoescomp;
 
+import java.util.ArrayList;
+
 
 public class Participante implements Usuario {
     
@@ -15,6 +17,7 @@ public class Participante implements Usuario {
     private String rg;
     private String cpf;
     private String nomeUsuarioIg;       // nome de usuario de Instagram 
+    private ArrayList<Evento> eventos;  // Eventos a quais o Participante ira
     
     /**
      * Constructor
@@ -34,7 +37,8 @@ public class Participante implements Usuario {
        this.numeroTelefone = numTel;
        this.rg = rg;
        this.cpf = cpf;
-       this.nomeUsuarioIg = instagram;          
+       this.nomeUsuarioIg = instagram;
+       this.eventos = new ArrayList<>();
     }
     
     // Métodos Mutadores
